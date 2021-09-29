@@ -11,15 +11,16 @@ Fila::~Fila(){
 }
 
 bool Fila::enqueue(Datagrama* d){
-    if (fim == inicio){
+    if (qtde_alocados == tamanho){
         //if(qtde_alocados = tamanho)
         //Overflow
-	return false;
+	    return false;
 
     } else {
         elementos[fim] = d;
 
         fim++;
+        qtde_alocados++;
         if (fim == tamanho) fim = 0;
 	    return true;
     }
@@ -31,21 +32,22 @@ Datagrama* Fila::dequeue(){
 	    return nullptr;
     } else {
         inicio = inicio+1;
+        qtde_alocados--;
 	    return elementos[inicio];
     }
 }
 
 bool isEmpty(){
-    return (inicio+1)%this->tamanho == fim;
+    return (qtde_alocados == 0);
 }
 
 int getSize(){
-    //return qtde_alocados;
+    return qtde_alocados;
 }
 
 //Refatorar tal função posteriormente
 void imprimir(){
-    for(int i=inicio; i!=fim;i = (i+1)%tamanho){
+    for(int i=inicio; i!=fim; i = (i+1)%tamanho){
         cout << elementos[i]->data << endl;
     }
     cout << elementos[fim]->data << endl;
