@@ -14,19 +14,24 @@ bool Fila::enqueue(Datagrama* d){
     if (fim == inicio){
         //if(qtde_alocados = tamanho)
         //Overflow
+	return false;
+
     } else {
         elementos[fim] = d;
 
         fim++;
         if (fim == tamanho) fim = 0;
+	return true;
     }
 }
 
-Fila::Datagrama* dequeue(){
+Datagrama* Fila::dequeue(){
     if (this->isEmpty()){
         //Underflow
+	return nullptr;
     } else {
         inicio = inicio+1;
+	return elementos[inicio];
     }
 }
 bool isEmpty(){
