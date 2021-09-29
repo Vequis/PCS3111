@@ -21,22 +21,24 @@ bool Fila::enqueue(Datagrama* d){
 
         fim++;
         if (fim == tamanho) fim = 0;
-	return true;
+	    return true;
     }
 }
 
 Datagrama* Fila::dequeue(){
     if (this->isEmpty()){
         //Underflow
-	return nullptr;
+	    return nullptr;
     } else {
         inicio = inicio+1;
-	return elementos[inicio];
+	    return elementos[inicio];
     }
 }
+
 bool isEmpty(){
     return (inicio+1)%this->tamanho == fim;
 }
+
 int getSize(){
     //return qtde_alocados;
 }
