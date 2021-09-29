@@ -1,7 +1,7 @@
 Fila::Fila(int tamanho){
     this->tamanho = tamanho;
-    inicio = 0;
-    fim = 1;
+    inicio = 0; //Primeira posição ocupada no vetor
+    fim = 1; //Primeira posição livre no vetor
     qtde_alocados = 0;
     Datagrama **elementos = new Datagrama*[tamanho];
 }
@@ -12,7 +12,6 @@ Fila::~Fila(){
 
 bool Fila::enqueue(Datagrama* d){
     if (qtde_alocados == tamanho){
-        //if(qtde_alocados = tamanho)
         //Overflow
 	    return false;
 
