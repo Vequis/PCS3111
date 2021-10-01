@@ -1,6 +1,9 @@
 #ifndef TABELA_H
 #define TABELA_H
 
+#include "Roteador.h"
+
+class Roteador;
 
 class TabelaDeRepasse {
 private:
