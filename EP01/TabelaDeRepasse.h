@@ -1,5 +1,5 @@
-#ifndef TABELA_H
-#define TABELA_H
+#ifndef TABELADEREPASSE_H
+#define TABELADEREPASSE_H
 
 #include "Roteador.h"
 
